@@ -1,34 +1,110 @@
 import React from 'react';
 
 import { Checkbox } from './Form';
+import SearchNav from './SearchNav';
 
 export default function Search() {
   return (
     <section className="search-container">
-      <nav>
-        <ul>
-          <li className="active">
-            <i className="fas fa-car" />
-            <div>
-              <span className="superscript-text">COMPRAR</span>
-              CARROS
-            </div>
-          </li>
-          <li>
-            <i className="fas fa-motorcycle" />
-            <div>
-              <span className="superscript-text">COMPRAR</span>
-              MOTOS
-            </div>
-          </li>
-        </ul>
-      </nav>
+      <SearchNav />
 
       <section className="filter-container">
         <form>
-          <Checkbox label="Novo" value="new" />
+          <div className="row">
+            <div className="col-2">
+              <Checkbox label="Novo" value="new" />
+            </div>
+            <div className="col-2">
+              <Checkbox label="Usado" value="used" />
+            </div>
+          </div>
 
-          <Checkbox label="Usado" value="used" />
+          <div className="row">
+            <div className="col-8 group">
+              <div className="field">
+                <label className="where">
+                  <i className="fas fa-map-marker-alt" />
+                  Onde:
+                </label>
+                <input type="text" />
+              </div>
+
+              <div className="field input-radius">
+                <label>Raio:</label>
+                <select>
+                  <option>100km</option>
+                </select>
+              </div>
+            </div>
+
+            <div className="col-4">
+              <div className="field">
+                <label>Marca:</label>
+                <select>
+                  <option>100km</option>
+                </select>
+              </div>
+            </div>
+
+            <div className="col-4">
+              <div className="field">
+                <label>Modelo:</label>
+                <select>
+                  <option>100km</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div className="row">
+            <div className="col-4">
+              <div className="field">
+                <label>Ano Desejado:</label>
+                <select>
+                  <option>100km</option>
+                </select>
+              </div>
+            </div>
+
+            <div className="col-4">
+              <div className="field">
+                <label>Faixa de preço:</label>
+                <select>
+                  <option>100km</option>
+                </select>
+              </div>
+            </div>
+
+            <div className="col-8">
+              <div className="field">
+                <label>Versão:</label>
+                <select>
+                  <option>100km</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div className="row mt-5">
+            <div className="col-8">
+              <button type="button" className="advanced-search-button">
+                <i className="fas fa-chevron-right" />
+                Busca Avançada
+              </button>
+            </div>
+
+            <div className="col-2">
+              <button type="button" className="clear-filters">
+                Limpar filtros
+              </button>
+            </div>
+
+            <div className="col-6">
+              <button type="button" className="show-offers">
+                VER OFERTAS
+              </button>
+            </div>
+          </div>
         </form>
       </section>
     </section>

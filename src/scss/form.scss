@@ -8,11 +8,11 @@ label.checkbox {
     display: inline-block;
     width: 15px;
     height: 15px;
-    border: $component-border;
-    border-radius: 2px;
     margin-right: 5px;
     background-color: #fff;
     margin-bottom: -2px;
+
+    @include default-border;
   }
 
   input:checked + & {
@@ -22,4 +22,61 @@ label.checkbox {
 
 input.checkbox {
   display: none;
+}
+
+form {
+  .row {
+    .field {
+      width: 100%;
+      position: relative;
+
+      > label {
+        position: absolute;
+        margin-left: 10px;
+        line-height: 65px;
+
+        & + input, & + select {
+          padding-left: 75px !important;
+        }
+      }
+
+      > input[type="text"], > select {
+        width: 100%;
+        @include default-border;
+        margin: 15px 0;
+        font-size: 16px;
+        padding: 5px;
+        background-color: #fff;
+        font-weight: bold;
+        color: $component-text-color;
+      }
+    }
+
+    & .group {
+      display: flex;
+    
+      .field {
+        > input, > select {
+          border-radius: 0;
+          border-radius: 0;
+          border-right-width: 0;
+        }
+
+        &:first-child {
+          > input, > select {
+            border-top-left-radius: $default-border-radius;
+            border-bottom-left-radius: $default-border-radius;
+          }
+        }
+    
+        &:last-child {
+          > input, > select {
+            border-right-width: $default-border-width;
+            border-top-right-radius: $default-border-radius;
+            border-bottom-right-radius: $default-border-radius;
+          }
+        }
+      }
+    }
+  }
 }

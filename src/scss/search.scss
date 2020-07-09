@@ -4,6 +4,49 @@
   .filter-container {
     background-color: #fff;
     padding: 30px 50px;
+    min-height: 312px;
+
+    .where i {
+      color: $primary-color;
+      margin-right: 3px;
+    }
+
+    .input-radius {
+      width: 260px;
+    }
+
+    .advanced-search-button {
+      color: $primary-color;
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+      font-weight: bold;
+
+      i {
+        color: $primary-color;
+        margin-right: 3px;
+      }
+    }
+
+    .clear-filters, .show-offers {
+      text-align: center;
+      color: $component-color;
+      border: 0;
+      background-color: transparent;
+      font-size: 10px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    .show-offers {
+      background-color: $primary-color;
+      font-size: 22px;
+      color: #fff;
+      font-weight: bold;
+      line-height: 50px;
+      width: 100%;
+      border-radius: 4px;
+    }
   }
 }
 

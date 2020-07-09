@@ -13,14 +13,16 @@ export default function App() {
   return (
     <>
       <Header />
-      <Router>
-        <Switch>
-          <Redirect exact from="/" to="/search" />
-          <Route path="/search">
-            <Search />
-          </Route>
-        </Switch>
-      </Router>
+      <section className="container">
+        <Router>
+          <Switch>
+            <Redirect exact from="/" to="/search" />
+            <Route path="/search">
+              <Search />
+            </Route>
+          </Switch>
+        </Router>
+      </section>
     </>
   );
 }

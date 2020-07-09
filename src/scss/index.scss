@@ -16,6 +16,11 @@ html, body {
   }
 }
 
+.container {
+  max-width: $max-container-size;
+  margin: 0 auto;
+}
+
 @import "header";
 @import "search";
 @import "form";

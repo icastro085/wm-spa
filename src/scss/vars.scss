@@ -1,14 +1,54 @@
+$default-border-radius: 2px;
+$default-border-width: 1px;
+
 $component-font: 'Poppins', sans-serif;
 $component-color: #908c86;
-$component-border: 1px solid #d6d2d7;
-$primary-color: #bf2844;
+$component-text-color: #746a57;
+$component-border: $default-border-width solid #d6d2d7;
+$primary-color: #d1001f;
 
 $background-color: #f4f4f4;
+
+$max-container-size: 933px;
+$max-columns: 16;
+$max-margin-number: 5;
+
+$text-align: left, center, right, justify;
+
+@each $align in $text-align {
+  .text-#{$align} {
+    text-align: $align;
+    text-align-last: $align;
+  }
+}
 
 @mixin clear-both {
   &::after {
     content: "";
     display: block;
     clear: both;
+  }
+}
+
+@mixin default-border {
+  border: $component-border;
+  border-radius: $default-border-radius;
+}
+
+.row {
+  display: flex;
+  align-items: baseline;
+
+  @for $i from 1 through $max-columns {
+    .col-#{$i} {
+      width: 100% / ($max-columns / $i);
+      padding: 0 10px;
+    }
+  }
+}
+
+@for $i from 1 through $max-margin-number {
+  .mt-#{$i} {
+    margin-top: 2px + (4px * ($i - 1));
   }
 }
