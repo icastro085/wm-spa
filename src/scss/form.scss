@@ -1,0 +1,25 @@
+label.checkbox {
+  user-select: none;
+  position: relative;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border: $component-border;
+    border-radius: 2px;
+    margin-right: 5px;
+    background-color: #fff;
+    margin-bottom: -2px;
+  }
+
+  input:checked + & {
+    color: #ae1147;
+  }
+}
+
+input.checkbox {
+  display: none;
+}

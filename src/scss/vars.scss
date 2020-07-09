@@ -1,0 +1,14 @@
+$component-font: 'Poppins', sans-serif;
+$component-color: #908c86;
+$component-border: 1px solid #d6d2d7;
+$primary-color: #bf2844;
+
+$background-color: #f4f4f4;
+
+@mixin clear-both {
+  &::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
