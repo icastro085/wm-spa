@@ -36,7 +36,7 @@ export default function Search() {
 
               <div className="field input-radius">
                 <label>Raio:</label>
-                <select>
+                <select className="text-right">
                   <option>100km</option>
                 </select>
               </div>
@@ -51,7 +51,7 @@ export default function Search() {
             <div className="col-3">
               <div className="field">
                 <label>Ano Desejado:</label>
-                <select>
+                <select className="text-right">
                   <option>100km</option>
                 </select>
               </div>
@@ -60,7 +60,7 @@ export default function Search() {
             <div className="col-3">
               <div className="field">
                 <label>Faixa de preço:</label>
-                <select>
+                <select className="text-right">
                   <option>100km</option>
                 </select>
               </div>
