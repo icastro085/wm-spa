@@ -41,3 +41,15 @@ export const getModel = async ({
     return null;
   }
 };
+
+export const getVersion = async ({
+  ModelID,
+}) => {
+  try {
+    const { data } = await webmotors.get('Version', { params: { ModelID } });
+
+    return data;
+  } catch (e) {
+    return null;
+  }
+};
