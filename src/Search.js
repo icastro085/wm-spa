@@ -2,6 +2,8 @@ import React from 'react';
 
 import { Checkbox } from './Form';
 import SearchNav from './SearchNav';
+import SearchActions from './SearchActions';
+import VehiclesList from './VehiclesList';
 
 export default function Search() {
   return (
@@ -20,7 +22,7 @@ export default function Search() {
           </div>
 
           <div className="row">
-            <div className="col-8 group">
+            <div className="col-6 group">
               <div className="field">
                 <label className="where">
                   <i className="fas fa-map-marker-alt" />
@@ -37,7 +39,7 @@ export default function Search() {
               </div>
             </div>
 
-            <div className="col-4">
+            <div className="col-3">
               <div className="field">
                 <label>Marca:</label>
                 <select>
@@ -46,7 +48,7 @@ export default function Search() {
               </div>
             </div>
 
-            <div className="col-4">
+            <div className="col-3">
               <div className="field">
                 <label>Modelo:</label>
                 <select>
@@ -57,7 +59,7 @@ export default function Search() {
           </div>
 
           <div className="row">
-            <div className="col-4">
+            <div className="col-3">
               <div className="field">
                 <label>Ano Desejado:</label>
                 <select>
@@ -66,7 +68,7 @@ export default function Search() {
               </div>
             </div>
 
-            <div className="col-4">
+            <div className="col-3">
               <div className="field">
                 <label>Faixa de preço:</label>
                 <select>
@@ -75,7 +77,7 @@ export default function Search() {
               </div>
             </div>
 
-            <div className="col-8">
+            <div className="col-6">
               <div className="field">
                 <label>Versão:</label>
                 <select>
@@ -85,28 +87,11 @@ export default function Search() {
             </div>
           </div>
 
-          <div className="row mt-5">
-            <div className="col-8">
-              <button type="button" className="advanced-search-button">
-                <i className="fas fa-chevron-right" />
-                Busca Avançada
-              </button>
-            </div>
-
-            <div className="col-2">
-              <button type="button" className="clear-filters">
-                Limpar filtros
-              </button>
-            </div>
-
-            <div className="col-6">
-              <button type="button" className="show-offers">
-                VER OFERTAS
-              </button>
-            </div>
-          </div>
+          <SearchActions />
         </form>
       </section>
+
+      <VehiclesList />
     </section>
   );
 }

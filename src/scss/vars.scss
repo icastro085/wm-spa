@@ -1,4 +1,4 @@
-$default-border-radius: 2px;
+$default-border-radius: 4px;
 $default-border-width: 1px;
 
 $component-font: 'Poppins', sans-serif;
@@ -10,8 +10,9 @@ $primary-color: #d1001f;
 $background-color: #f4f4f4;
 
 $max-container-size: 933px;
-$max-columns: 16;
+$max-columns: 12;
 $max-margin-number: 5;
+$col-padding: 10px;
 
 $text-align: left, center, right, justify;
 
@@ -23,7 +24,7 @@ $text-align: left, center, right, justify;
 }
 
 @mixin clear-both {
-  &::after {
+  &::before, &::after {
     content: "";
     display: block;
     clear: both;
@@ -38,11 +39,14 @@ $text-align: left, center, right, justify;
 .row {
   display: flex;
   align-items: baseline;
+  flex-wrap: wrap;
+  margin-left: -$col-padding;
+  margin-right: -$col-padding;
 
   @for $i from 1 through $max-columns {
     .col-#{$i} {
       width: 100% / ($max-columns / $i);
-      padding: 0 10px;
+      padding: 0 $col-padding;
     }
   }
 }
@@ -50,5 +54,14 @@ $text-align: left, center, right, justify;
 @for $i from 1 through $max-margin-number {
   .mt-#{$i} {
     margin-top: 2px + (4px * ($i - 1));
+  }
+
+  .mb-#{$i} {
+    margin-bottom: 2px + (4px * ($i - 1));
+  }
+
+  .my-#{$i} {
+    margin-top: 2px + (4px * ($i - 1));
+    margin-bottom: 2px + (4px * ($i - 1));
   }
 }
