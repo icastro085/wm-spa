@@ -1,9 +1,13 @@
 import { combineReducers, applyMiddleware, createStore } from 'redux';
 import reduxPromise from 'redux-promise';
-import vehicles from './vehicles';
+import make from './make';
+import model from './model';
+import vehicle from './vehicle';
 
 const reducers = combineReducers({
-  vehicles,
+  make,
+  model,
+  vehicle,
 });
 
 const middlewares = [reduxPromise];

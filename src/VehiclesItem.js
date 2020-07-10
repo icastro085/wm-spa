@@ -20,7 +20,7 @@ export default function VehiclesItem({
         </div>
         <div className="details">
           <span className="make-model my-3">{Make} - {Model}</span>
-          <h3 className="version my-3">{Version}</h3>
+          <h3 className="version my-5">{Version}</h3>
           <span className="price my-3">R$ {Price}</span>
 
           <div className="sup-info">

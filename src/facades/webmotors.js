@@ -19,3 +19,25 @@ export const getVehicles = async ({
     return null;
   }
 };
+
+export const getMake = async () => {
+  try {
+    const { data } = await webmotors.get('Make');
+
+    return data;
+  } catch (e) {
+    return null;
+  }
+};
+
+export const getModel = async ({
+  MakeID,
+}) => {
+  try {
+    const { data } = await webmotors.get('Model', { params: { MakeID } });
+
+    return data;
+  } catch (e) {
+    return null;
+  }
+};

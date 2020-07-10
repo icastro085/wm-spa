@@ -65,3 +65,10 @@ $text-align: left, center, right, justify;
     margin-bottom: 2px + (4px * ($i - 1));
   }
 }
+
+.disabled * {
+  cursor: default;
+  opacity: 0.8;
+  pointer-events: none;
+  user-select: none;
+}

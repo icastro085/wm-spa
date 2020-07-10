@@ -4,6 +4,8 @@ import { Checkbox } from './Form';
 import SearchNav from './SearchNav';
 import SearchActions from './SearchActions';
 import VehiclesList from './VehiclesList';
+import SearchFilterMake from './SearchFilterMake';
+import SearchFilterModel from './SearchFilterModel';
 
 export default function Search() {
   return (
@@ -39,23 +41,9 @@ export default function Search() {
               </div>
             </div>
 
-            <div className="col-3">
-              <div className="field">
-                <label>Marca:</label>
-                <select>
-                  <option>100km</option>
-                </select>
-              </div>
-            </div>
+            <SearchFilterMake />
 
-            <div className="col-3">
-              <div className="field">
-                <label>Modelo:</label>
-                <select>
-                  <option>100km</option>
-                </select>
-              </div>
-            </div>
+            <SearchFilterModel />
           </div>
 
           <div className="row">
