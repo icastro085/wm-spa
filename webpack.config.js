@@ -4,6 +4,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const path = require('path');
 
 const config = {
+  devtool: 'cheap-module-source-map',
   mode: 'development',
   entry: ['@babel/polyfill','./src/index.js'],
   output: {
