@@ -7,8 +7,8 @@ export default function SearchFilterModel() {
   const { model, getModel, setModel } = useModel();
   const {
     query: {
-      MakeID: MakeIDQuery,
-      ModelID: ModelIDQuery,
+      MakeID: MakeIDQuery = '',
+      ModelID: ModelIDQuery = '',
     },
     addQuery,
   } = useQuery();

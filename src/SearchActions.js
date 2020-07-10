@@ -1,8 +1,18 @@
 import React from 'react';
 import useVehicles from './hooks/useVehicles';
+import useQuery from './hooks/useQuery';
 
 export default function SearchActions() {
   const { getVehicles } = useVehicles();
+  const { addQuery } = useQuery();
+
+  const clearFilters = () => {
+    addQuery({
+      MakeID: null,
+      ModelID: null,
+      VersionID: null,
+    });
+  };
 
   return (
     <div className="row mt-5">
@@ -14,7 +24,7 @@ export default function SearchActions() {
       </div>
 
       <div className="col-2">
-        <button type="button" className="clear-filters">
+        <button type="button" className="clear-filters" onClick={clearFilters}>
           Limpar filtros
         </button>
       </div>

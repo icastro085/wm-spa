@@ -7,8 +7,8 @@ export default function SearchFilterVersion() {
   const { version, setVersion, getVersion } = useVersion();
   const {
     query: {
-      ModelID: ModelIDQuery,
-      VersionID: VersionIDQuery,
+      ModelID: ModelIDQuery = '',
+      VersionID: VersionIDQuery = '',
     },
     addQuery,
   } = useQuery();

@@ -4,7 +4,7 @@ import useQuery from './hooks/useQuery';
 
 export default function SearchFilterMake() {
   const { make, getMake } = useMake();
-  const { query: { MakeID: MakeIDQuery }, addQuery } = useQuery();
+  const { query: { MakeID: MakeIDQuery = '' }, addQuery } = useQuery();
 
   useEffect(() => {
     getMake();
