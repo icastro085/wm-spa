@@ -1,8 +1,8 @@
 import React from 'react';
-import useWebmotors from './hooks/useWebmotors';
+import useVehicles from './hooks/useVehicles';
 
 export default function SearchActions() {
-  const { getVehicles } = useWebmotors();
+  const { getVehicles } = useVehicles();
 
   return (
     <div className="row mt-5">

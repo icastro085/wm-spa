@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 
 import VehiclesItem from './VehiclesItem';
-import useWebmotors from './hooks/useWebmotors';
+import useVehicles from './hooks/useVehicles';
 
 export default function VehiclesList() {
-  const { vehicles, getVehicles } = useWebmotors();
+  const { vehicles, getVehicles } = useVehicles();
 
   useEffect(() => {
     getVehicles();
