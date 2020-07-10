@@ -47,6 +47,7 @@ form {
         font-size: 12px;
         white-space: nowrap;
         margin-left: 10px;
+        user-select: none;
 
         & + input, & + select {
           padding-left: 60px  !important;

@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 
 export default function VehiclesItem({
   vehicle: {
+    ID,
     Image,
     KM,
     Make,
@@ -12,8 +13,8 @@ export default function VehiclesItem({
     YearModel,
   },
 }) {
-  return (
-    <div className="item-container col-4 mb-5">
+  return useMemo(() => (
+    <div className="item-container col-4 mb-5" id={ID}>
       <div className="item">
         <div className="image-container">
           <img alt={Version} src={Image} />
@@ -30,5 +31,5 @@ export default function VehiclesItem({
         </div>
       </div>
     </div>
-  );
+  ), []);
 }

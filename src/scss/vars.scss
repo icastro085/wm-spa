@@ -64,6 +64,10 @@ $text-align: left, center, right, justify;
     margin-top: 2px + (4px * ($i - 1));
     margin-bottom: 2px + (4px * ($i - 1));
   }
+
+  .mr-#{$i} {
+    margin-right: 2px + (4px * ($i - 1));
+  }
 }
 
 .disabled * {

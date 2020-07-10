@@ -88,6 +88,7 @@
   .container-items {
     @include clear-both;
     align-items: initial;
+    margin-bottom: 250px;
 
     .item-container .item {
       min-height: 350px;
@@ -112,6 +113,10 @@
         .make-model, .version, .price {
           @include clear-both;
           display: block;
+        }
+
+        .price {
+          color: $primary-color;
         }
 
         .sup-info {

@@ -1,12 +1,12 @@
 import React from 'react';
 
-import { Checkbox } from './Form';
 import SearchNav from './SearchNav';
 import SearchActions from './SearchActions';
 import VehiclesList from './VehiclesList';
 import SearchFilterMake from './SearchFilterMake';
 import SearchFilterModel from './SearchFilterModel';
 import SearchFilterVersion from './SearchFilterVersion';
+import SearchType from './SearchType';
 
 export default function Search() {
   return (
@@ -16,12 +16,7 @@ export default function Search() {
       <section className="filter-container">
         <form>
           <div className="row">
-            <div className="col-2">
-              <Checkbox label="Novo" value="new" />
-            </div>
-            <div className="col-2">
-              <Checkbox label="Usado" value="used" />
-            </div>
+            <SearchType />
           </div>
 
           <div className="row">
