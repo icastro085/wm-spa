@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useRef } from 'react';
 
 import useVehicles from './useVehicles';
 import useQuery from './useQuery';
@@ -7,7 +7,9 @@ import useModel from './useModel';
 import useVersion from './useVersion';
 
 export default function useFilteredVehicles() {
-  const { vehicles, getVehicles } = useVehicles();
+  const page = useRef(1);
+
+  const { vehicles, getVehicles, setVehicles } = useVehicles();
   const { make } = useMake();
   const { model } = useModel();
   const { version } = useVersion();
@@ -25,10 +27,6 @@ export default function useFilteredVehicles() {
   };
 
   let vehiclesFiltered = vehicles;
-
-  useEffect(() => {
-    getVehicles();
-  }, []);
 
   if (vehicles.length) {
     vehiclesFiltered = vehicles.filter(({ Make, Model, Version }) => {
@@ -50,7 +48,21 @@ export default function useFilteredVehicles() {
     });
   }
 
+  const gePage = async ({ currentVehicles = [], Page = page.current + 1 }) => {
+    const nextPageOfVehicles = await getVehicles({ Page });
+    page.current = Page;
+
+    if (nextPageOfVehicles && nextPageOfVehicles.length) {
+      const updatedVehicles = [...currentVehicles, ...nextPageOfVehicles];
+      setVehicles(updatedVehicles);
+    }
+
+    return nextPageOfVehicles;
+  };
+
   return {
-    vehicles: vehiclesFiltered,
+    vehiclesFiltered,
+    vehicles,
+    gePage,
   };
 }

@@ -1,9 +1,9 @@
 import React from 'react';
-import useVehicles from './hooks/useVehicles';
 import useQuery from './hooks/useQuery';
+import useFilteredVehicles from './hooks/useFilteredVehicles';
 
 export default function SearchActions() {
-  const { getVehicles } = useVehicles();
+  const { gePage } = useFilteredVehicles();
   const { addQuery } = useQuery();
 
   const clearFilters = () => {
@@ -12,6 +12,10 @@ export default function SearchActions() {
       ModelID: null,
       VersionID: null,
     });
+  };
+
+  const onGetVehicles = async () => {
+    await gePage({ Page: 1 });
   };
 
   return (
@@ -30,7 +34,7 @@ export default function SearchActions() {
       </div>
 
       <div className="col-4">
-        <button type="button" className="show-offers" onClick={getVehicles}>
+        <button type="button" className="show-offers" onClick={onGetVehicles}>
           VER OFERTAS
         </button>
       </div>

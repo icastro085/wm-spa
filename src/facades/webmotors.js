@@ -5,12 +5,12 @@ const webmotors = axios.create({
 });
 
 export const getVehicles = async ({
-  page = 1,
+  Page = 1,
 } = {}) => {
   try {
     const { data } = await webmotors.get('Vehicles', {
       params: {
-        Page: page,
+        Page,
       },
     });
 

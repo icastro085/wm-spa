@@ -11,10 +11,9 @@ export default function useVehicles() {
     dispatch(setAll([...items]));
   };
 
-  const getVehicles = async () => {
-    const vehiclesResult = await getWebmotorsVehicles();
-    setVehicles(vehiclesResult);
-  };
+  const getVehicles = async ({ Page } = {}) => (
+    getWebmotorsVehicles({ Page })
+  );
 
   return {
     vehicles,
