@@ -7,6 +7,10 @@
     align-items: baseline;
     margin-bottom: -2px;
 
+    @include media(441px) {
+      flex-direction: column-reverse;
+    }
+
     nav {
       ul li {
         float: left;
@@ -37,6 +41,10 @@
           i {
             color: $primary-color;
           }
+        }
+
+        @include media(320px) {
+          font-size: 18px;
         }
       }
     

@@ -138,6 +138,10 @@ form {
         background-color: #fff;
         font-weight: bold;
         color: $component-text-color;
+
+        &::placeholder {
+          opacity: 0.3;
+        }
       }
     }
 
@@ -145,6 +149,19 @@ form {
       @media only screen and (min-width: 1024px) and (max-width: 1600px) {
         @include group;
       }
+    }
+  }
+
+  .btn {
+    @include default-border;
+    outline: none;
+    background-color: #fff;
+    padding: 5px 20px;
+    opacity: .9;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 1;
     }
   }
 }

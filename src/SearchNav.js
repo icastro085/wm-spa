@@ -43,7 +43,7 @@ export default function SearchNav() {
           }
         </ul>
       </nav>
-      <a className="button-sales" href="/#/sales">
+      <a className="button-sales" href="/#/sales/create">
         {__('search.nav.sales-car')}
       </a>
     </div>

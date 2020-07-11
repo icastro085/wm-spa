@@ -22,7 +22,7 @@ export default function App() {
               <Search />
             </Route>
 
-            <Route path="/sales">
+            <Route path="/sales/create">
               <Sales />
             </Route>
           </Switch>

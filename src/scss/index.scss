@@ -1,5 +1,6 @@
 @import "reset";
 @import "vars";
+@import "form";
 
 .superscript-text {
   font-size: small;
@@ -23,6 +24,5 @@ html, body {
 }
 
 @import "header";
-@import "form";
 @import "search";
 @import "sales";

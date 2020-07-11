@@ -48,9 +48,14 @@ $text-align: left, center, right, justify;
   margin-left: -$col-padding;
   margin-right: -$col-padding;
 
+  &-#{fluid} {
+    margin-left:0;
+    margin-right: 0;
+  }
+
   @for $i from 1 through $max-columns {
     .col-#{$i} {
-      width: 100% / ($max-columns / $i);
+      width: 100% / ($max-columns / $i) !important;
       padding-left: $col-padding;
       padding-right: $col-padding;
 

@@ -1,0 +1,35 @@
+.search-container {
+  padding: 5px;
+
+  .form-container {
+    padding: 10px 40px;
+    background-color: #fff;
+
+    .image-container {
+      @include default-border;
+      min-height: 300px;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      i {
+        font-size: 68px;
+      }
+
+      img {
+        max-width: 100%;
+      }
+
+      input[type="file"] {
+        background-color: transparent;
+        opacity: 0;
+        padding: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+}
