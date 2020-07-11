@@ -15,6 +15,7 @@ export default function SearchActions() {
       Type: null,
       Years: null,
       Prices: null,
+      Radius: null,
     });
   };
 
