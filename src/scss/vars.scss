@@ -12,7 +12,7 @@ $background-color: #f4f4f4;
 $max-container-size: 933px;
 $max-columns: 12;
 $max-margin-number: 5;
-$col-padding: 10px;
+$col-padding: 5px;
 
 $text-align: left, center, right, justify;
 
@@ -50,25 +50,25 @@ $text-align: left, center, right, justify;
 
   @for $i from 1 through $max-columns {
     .col-#{$i} {
-      width: 100% / ($max-columns / $i);
+      width: 100% / ($max-columns / $i) !important;
       padding-left: $col-padding;
       padding-right: $col-padding;
 
       @include media(823px) {
         &-#{sm} {
-          width: 100% / ($max-columns / $i);
+          width: 100% / ($max-columns / $i) !important;
         }
       }
 
       @include media(411px) {
         &-#{smx} {
-          width: 100% / ($max-columns / $i);
+          width: 100% / ($max-columns / $i) !important;
         }
       }
 
       @include media(320px) {
         &-#{smxx} {
-          width: 100% / ($max-columns / $i);
+          width: 100% / ($max-columns / $i) !important;
         }
       }
     }
