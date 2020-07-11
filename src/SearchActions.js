@@ -14,6 +14,7 @@ export default function SearchActions() {
       VersionID: null,
       Type: null,
       Years: null,
+      Prices: null,
     });
   };
 
