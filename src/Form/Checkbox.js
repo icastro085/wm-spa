@@ -19,7 +19,7 @@ export default function Checkbox({
         id={forId.current}
         type="checkbox"
         value={valueOfCheckbox}
-        defaultChecked={checkedOfCheckbox}
+        checked={checkedOfCheckbox}
         onChange={onChange}
       />
       <label className="checkbox" htmlFor={forId.current}>{__(label)}</label>

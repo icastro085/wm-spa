@@ -71,6 +71,13 @@ $text-align: left, center, right, justify;
           width: 100% / ($max-columns / $i) !important;
         }
       }
+
+      // & > [class*="col-"] {
+      //   display: flex;
+      //   flex-wrap: wrap;
+      //   margin-left: -$col-padding;
+      //   margin-right: -$col-padding;
+      // }
     }
   }
 }
@@ -113,4 +120,11 @@ $text-align: left, center, right, justify;
   opacity: 0.8;
   pointer-events: none;
   user-select: none;
+}
+
+hr {
+  @include clear-both;
+  border-bottom: 1px solid $component-color;
+  width: 100%;
+  opacity: .3;
 }

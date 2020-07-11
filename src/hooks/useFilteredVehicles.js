@@ -24,6 +24,7 @@ export default function useFilteredVehicles() {
     Type = ['new', 'used'],
     Years = '',
     Prices = '',
+    Colors = [],
   } = query;
 
   const findFilter = (data = [], idToFind) => (
@@ -52,6 +53,7 @@ export default function useFilteredVehicles() {
       YearFab,
       YearModel,
       Price,
+      Color,
     }) => {
       let isValid = true;
 
@@ -86,6 +88,10 @@ export default function useFilteredVehicles() {
           parseInt(pricesToCheck[0]) <= parseInt(Price)
           && parseInt(pricesToCheck[1]) >= parseInt(Price)
         );
+      }
+
+      if (Colors.length) {
+        isValid = isValid && (Colors.indexOf(Color) !== -1);
       }
 
       return isValid;
