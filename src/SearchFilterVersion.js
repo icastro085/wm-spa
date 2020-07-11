@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import classNames from 'classnames';
 import useVersion from './hooks/useVersion';
 import useQuery from './hooks/useQuery';
+import { Select } from './Form';
 
 export default function SearchFilterVersion() {
   const { version, setVersion, getVersion } = useVersion();
@@ -12,6 +13,7 @@ export default function SearchFilterVersion() {
     },
     addQuery,
   } = useQuery();
+  const initialList = [{ ID: '', Name: 'Todas' }];
 
   let isDisabled = false;
 
@@ -19,8 +21,7 @@ export default function SearchFilterVersion() {
     isDisabled = true;
   }
 
-  const onChangeVersion = (e) => {
-    const VersionID = e.target.value;
+  const onChangeVersion = (VersionID) => {
     addQuery({ VersionID });
   };
 
@@ -36,15 +37,13 @@ export default function SearchFilterVersion() {
   return (
     <div className={classNames('col-6 col-12-sm col-12-smx col-12-smxx', { disabled: isDisabled })}>
       <div className="field">
-        <label>Versão:</label>
-        <select onChange={onChangeVersion} value={VersionIDQuery}>
-          <option key="version-all" value="">Todas</option>
-          {
-            version.map(({ ID, Name }) => (
-              <option key={`version-${ID}`} value={ID}>{Name}</option>
-            ))
-          }
-        </select>
+        <Select
+          onChange={onChangeVersion}
+          value={VersionIDQuery ? parseInt(VersionIDQuery) : VersionIDQuery}
+          items={initialList.concat(version)}
+        >
+          Versão:
+        </Select>
       </div>
     </div>
   );

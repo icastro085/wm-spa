@@ -36,6 +36,39 @@ input.checkbox {
   display: none;
 }
 
+input.select {
+  & + ul {
+    @include default-border;
+    position: absolute;
+    top: 100%;
+    background-color: #fff;
+    z-index: 9;
+    top: calc(100% - 16px);
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    width: 100%;
+    transition: visibility .2s, opacity 0s;
+    visibility: hidden;
+    opacity: 0;
+
+    li {
+      padding: 10px 20px;
+      font-size: 12px;
+
+      &:hover {
+        background-color: $primary-color;
+        color: #fff;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &:focus + ul {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
 @mixin group {
   display: flex;
   flex-wrap: wrap;
@@ -73,6 +106,7 @@ form {
       width: 100%;
       display: flex;
       align-items: center;
+      position: relative;
 
       > label {
         font-size: 12px;

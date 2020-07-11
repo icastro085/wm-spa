@@ -51,7 +51,7 @@ export default function VehiclesList() {
 
   useEffect(() => {
     // prevent on first entry show result without press on search button
-    addQuery({ ShowResults: null, Years: null });
+    addQuery({ ShowResults: null });
   }, []);
 
   return (

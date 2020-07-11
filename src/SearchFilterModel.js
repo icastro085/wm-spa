@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import classNames from 'classnames';
 import useModel from './hooks/useModel';
 import useQuery from './hooks/useQuery';
+import { Select } from './Form';
 
 export default function SearchFilterModel() {
   const { model, getModel, setModel } = useModel();
@@ -12,6 +13,7 @@ export default function SearchFilterModel() {
     },
     addQuery,
   } = useQuery();
+  const initialList = [{ ID: '', Name: 'Todos' }];
 
   let isDisabled = false;
 
@@ -19,8 +21,7 @@ export default function SearchFilterModel() {
     isDisabled = true;
   }
 
-  const onChangeModel = (e) => {
-    const ModelID = e.target.value;
+  const onChangeModel = (ModelID) => {
     addQuery({ ModelID });
   };
 
@@ -36,15 +37,13 @@ export default function SearchFilterModel() {
   return (
     <div className={classNames('col-3 col-6-sm col-12-smx col-12-smxx', { disabled: isDisabled })}>
       <div className="field">
-        <label>Modelo:</label>
-        <select onChange={onChangeModel} value={ModelIDQuery}>
-          <option key="model-all" value="">Todos</option>
-          {
-            model.map(({ ID, Name }) => (
-              <option key={`model-${ID}`} value={ID}>{Name}</option>
-            ))
-          }
-        </select>
+        <Select
+          onChange={onChangeModel}
+          value={ModelIDQuery ? parseInt(ModelIDQuery) : ModelIDQuery}
+          items={initialList.concat(model)}
+        >
+          Modelo:
+        </Select>
       </div>
     </div>
   );
