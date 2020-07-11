@@ -21,26 +21,31 @@ export default function SearchNav() {
   });
 
   return (
-    <nav>
-      <ul>
-        {
-          TABS.map(({ icon, label }, index) => (
-            <li
-              onClick={() => setTab(index)}
-              className={classNames({ active: tab === index })}
-              key={`nav-${label}`}
-            >
-              <i className={icon} />
-              <div>
-                <span className="superscript-text">
-                  {__('search.nav.buy')}
-                </span>
-                {label}
-              </div>
-            </li>
-          ))
-        }
-      </ul>
-    </nav>
+    <div className="search-nav-bar">
+      <nav>
+        <ul>
+          {
+            TABS.map(({ icon, label }, index) => (
+              <li
+                onClick={() => setTab(index)}
+                className={classNames({ active: tab === index })}
+                key={`nav-${label}`}
+              >
+                <i className={icon} />
+                <div>
+                  <span className="superscript-text">
+                    {__('search.nav.buy')}
+                  </span>
+                  {label}
+                </div>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+      <a className="button-sales" href="/#/sales">
+        {__('search.nav.sales-car')}
+      </a>
+    </div>
   );
 }

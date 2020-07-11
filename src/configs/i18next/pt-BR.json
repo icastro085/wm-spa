@@ -25,7 +25,8 @@
     "nav": {
       "buy": "COMPRAR",
       "car": "CARROS",
-      "bike": "MOTOS"
+      "bike": "MOTOS",
+      "sales-car": "Vender meu carro"
     },
     "message-empty": "Sem resultados, utilize os filtros acima para buscar por ofertars",
     "message-wait": "Aguarde..."

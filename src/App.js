@@ -8,6 +8,7 @@ import {
 
 import Header from './Header';
 import Search from './Search';
+import Sales from './Sales';
 
 export default function App() {
   return (
@@ -19,6 +20,10 @@ export default function App() {
             <Redirect exact from="/" to="/search" />
             <Route path="/search">
               <Search />
+            </Route>
+
+            <Route path="/sales">
+              <Sales />
             </Route>
           </Switch>
         </Router>

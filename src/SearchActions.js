@@ -39,8 +39,8 @@ export default function SearchActions() {
 
   return (
     <>
-      <div className="row mt-5">
-        <div className="col-6 col-6-sm col-8-smx col-12-smxx mb-5">
+      <div className="row mt-5 advanced-container">
+        <div className="col-6 col-12-sm mb-5">
           <button
             type="button"
             className={classNames('advanced-search-button', { disabled: !vehicles.length })}
@@ -51,13 +51,13 @@ export default function SearchActions() {
           </button>
         </div>
 
-        <div className="col-2 col-6-sm col-4-smx col-12-smxx mb-5">
+        <div className="col-2 col-12-sm mb-5">
           <button type="button" className="clear-filters" onClick={clearFilters}>
             {__('search.actions.clear-filters')}
           </button>
         </div>
 
-        <div className="col-4 col-12-sm col-12-smx col-12-smxx mb-5">
+        <div className="col-4 col-12-sm mb-5">
           <button
             type="button"
             className={classNames('show-offers', { disabled: isLoadingVehicles })}

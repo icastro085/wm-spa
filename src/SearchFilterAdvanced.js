@@ -26,14 +26,14 @@ export default function SearchFilterAdvanced() {
 
   return (
     <>
-      <div className="col-6">
+      <div className="col-6 col-12-sm">
         <h4>{__('search.filters.colors')}</h4>
         <hr />
 
         <div className="row col-12 mt-5">
           {
             colorsFiltered.map((color) => (
-              <div className="col-4 mb-5" key={color}>
+              <div className="col-4 col-6-sm mb-5" key={color}>
                 <Checkbox
                   label={color}
                   value={color}
