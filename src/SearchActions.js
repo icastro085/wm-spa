@@ -30,13 +30,13 @@ export default function SearchActions() {
       <div className="col-6 col-6-sm col-8-smx col-12-smxx mb-5">
         <button type="button" className="advanced-search-button">
           <i className="fas fa-chevron-right" />
-          Busca Avançada
+          {__('search.actions.advanced-button')}
         </button>
       </div>
 
       <div className="col-2 col-6-sm col-4-smx col-12-smxx mb-5">
         <button type="button" className="clear-filters" onClick={clearFilters}>
-          Limpar filtros
+          {__('search.actions.clear-filters')}
         </button>
       </div>
 
@@ -46,7 +46,7 @@ export default function SearchActions() {
           className={classNames('show-offers', { disabled: isLoadingVehicles })}
           onClick={onGetVehicles}
         >
-          VER OFERTAS
+          {__('search.actions.show-offers')}
         </button>
       </div>
     </div>

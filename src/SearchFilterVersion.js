@@ -13,7 +13,7 @@ export default function SearchFilterVersion() {
     },
     addQuery,
   } = useQuery();
-  const initialList = [{ ID: '', Name: 'Todas' }];
+  const initialList = [{ ID: '', Name: __('search.filters.version-all') }];
 
   let isDisabled = false;
 
@@ -42,7 +42,7 @@ export default function SearchFilterVersion() {
           value={VersionIDQuery ? parseInt(VersionIDQuery) : VersionIDQuery}
           items={initialList.concat(version)}
         >
-          Versão:
+          {__('search.filters.version')}
         </Select>
       </div>
     </div>

@@ -6,7 +6,7 @@ import { Select } from './Form';
 export default function SearchFilterMake() {
   const { make, getMake } = useMake();
   const { query: { MakeID: MakeIDQuery = '' }, addQuery } = useQuery();
-  const initialList = [{ ID: '', Name: 'Todas' }];
+  const initialList = [{ ID: '', Name: __('search.filters.make-all') }];
 
   useEffect(() => {
     getMake();
@@ -24,7 +24,7 @@ export default function SearchFilterMake() {
           value={MakeIDQuery ? parseInt(MakeIDQuery) : MakeIDQuery}
           items={initialList.concat(make)}
         >
-          Marca:
+          {__('search.filters.make')}
         </Select>
       </div>
     </div>

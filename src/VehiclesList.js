@@ -64,7 +64,7 @@ export default function VehiclesList() {
           : !isLoadingVehicles && (
             <div className="col-12 mt-5 px-5">
               <p className="text-center empty-result">
-                Sem resultados, utilize os filtros acima para buscar por ofertars
+                {__('search.message-empty')}
               </p>
             </div>
           )
@@ -75,7 +75,7 @@ export default function VehiclesList() {
           ? (
             <div className="text-center col-12 mt-5 mb-5">
               <i className="fas fa-spinner fa-spin mr-2" />
-              Aguarde...
+              {__('search.message-wait')}
             </div>
           )
           : null

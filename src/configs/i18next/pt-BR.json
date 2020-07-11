@@ -1,0 +1,31 @@
+{
+  "search": {
+    "actions": {
+      "advanced-button": "Busca Avançada",
+      "clear-filters": "Limpar filtros",
+      "show-offers": "VER OFERTAS"
+    },
+    "filters": {
+      "make": "Marca:",
+      "make-all": "Todas",
+      "model": "Modelo:",
+      "model-all": "Todos",
+      "price": "Faixa de preço:",
+      "price-from": "De R$ {{price}}",
+      "price-to": "Até R$ {{price}}",
+      "version": "Versão:",
+      "version-all": "Todas",
+      "years": "Ano Desejado:",
+      "radius": "Raio:",
+      "new": "Novos",
+      "used": "Usados"
+    },
+    "nav": {
+      "buy": "COMPRAR",
+      "car": "CARROS",
+      "bike": "MOTOS"
+    },
+    "message-empty": "Sem resultados, utilize os filtros acima para buscar por ofertars",
+    "message-wait": "Aguarde..."
+  }
+}

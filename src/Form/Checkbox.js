@@ -22,7 +22,7 @@ export default function Checkbox({
         defaultChecked={checkedOfCheckbox}
         onChange={onChange}
       />
-      <label className="checkbox" htmlFor={forId.current}>{label}</label>
+      <label className="checkbox" htmlFor={forId.current}>{__(label)}</label>
     </>
   );
 }

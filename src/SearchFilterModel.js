@@ -13,7 +13,7 @@ export default function SearchFilterModel() {
     },
     addQuery,
   } = useQuery();
-  const initialList = [{ ID: '', Name: 'Todos' }];
+  const initialList = [{ ID: '', Name: __('search.filters.model-all') }];
 
   let isDisabled = false;
 
@@ -42,7 +42,7 @@ export default function SearchFilterModel() {
           value={ModelIDQuery ? parseInt(ModelIDQuery) : ModelIDQuery}
           items={initialList.concat(model)}
         >
-          Modelo:
+          {__('search.filters.model')}
         </Select>
       </div>
     </div>

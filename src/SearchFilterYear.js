@@ -44,7 +44,7 @@ export default function SearchFilterYear() {
           value={Years}
           items={yearsMapped}
         >
-          Ano Desejado:
+          {__('search.filters.years')}
         </Select>
       </div>
     </div>

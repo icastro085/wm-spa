@@ -6,12 +6,19 @@ import './scss/index.scss';
 
 import { store } from './redux';
 import App from './App';
+import { initializeLanguage } from './configs/i18next';
 
 const container = document.querySelector('#app');
 
-render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
-  container,
-);
+const initializeApp = async () => {
+  await initializeLanguage();
+
+  render(
+    <Provider store={store}>
+      <App />
+    </Provider>,
+    container,
+  );
+};
+
+initializeApp();

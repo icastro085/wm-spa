@@ -16,7 +16,11 @@ export default function SearchFilterPrice() {
 
       return {
         ID: `${previousPrice}_${Price}`,
-        Name: ` ${previousPrice ? (`De ${previousPrice}`) : ''} Até R$ ${Price}`,
+        Name: ` ${
+          previousPrice
+            ? __('search.filters.price-from', { price: previousPrice })
+            : ''
+        } ${__('search.filters.price-to', { price: Price })}`,
       };
     }));
 
@@ -34,7 +38,7 @@ export default function SearchFilterPrice() {
           value={Prices}
           items={priceListMapped}
         >
-          Faixa de preço:
+          {__('search.filters.price')}
         </Select>
       </div>
     </div>

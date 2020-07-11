@@ -5,16 +5,20 @@ import useNav from './hooks/useNav';
 const TABS = [
   {
     icon: 'fas fa-car',
-    label: 'CARROS',
+    label: 'search.nav.car',
   },
   {
     icon: 'fas fa-motorcycle',
-    label: 'MOTOS',
+    label: 'search.nav.bike',
   },
 ];
 
 export default function SearchNav() {
   const { tab, setTab } = useNav();
+
+  TABS.forEach((currentTab) => {
+    currentTab.label = __(currentTab.label);// eslint-disable-line no-param-reassign
+  });
 
   return (
     <nav>
@@ -29,7 +33,7 @@ export default function SearchNav() {
               <i className={icon} />
               <div>
                 <span className="superscript-text">
-                  COMPRAR
+                  {__('search.nav.buy')}
                 </span>
                 {label}
               </div>

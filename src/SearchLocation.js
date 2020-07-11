@@ -52,7 +52,7 @@ export default function SearchLocation() {
           onChange={onChange}
           items={itemsRadius}
         >
-          Raio:
+          {__('search.filters.radius')}
         </Select>
       </div>
     </div>

@@ -23,7 +23,7 @@ export default function SearchType() {
     <>
       <div className="col-2 col-4-sm col-6-smx col-6-smxx">
         <Checkbox
-          label="Novo"
+          label="search.filters.new"
           value="new"
           checked={Type.indexOf('new') !== -1}
           onChange={onChange}
@@ -31,7 +31,7 @@ export default function SearchType() {
       </div>
       <div className="col-2 col-4-sm col-6-smx col-6-smxx">
         <Checkbox
-          label="Usado"
+          label="search.filters.used"
           value="used"
           checked={Type.indexOf('used') !== -1}
           onChange={onChange}
