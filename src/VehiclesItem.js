@@ -14,7 +14,7 @@ export default function VehiclesItem({
   },
 }) {
   return useMemo(() => (
-    <div className="item-container col-4 mb-5" id={ID}>
+    <div className="item-container col-4 col-6-sm col-12-smx mb-5" id={ID}>
       <div className="item">
         <div className="image-container">
           <img alt={Version} src={Image} />

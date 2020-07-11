@@ -35,6 +35,11 @@ $text-align: left, center, right, justify;
   border: $component-border;
   border-radius: $default-border-radius;
 }
+@mixin media($width: 768px) {
+  @media only screen and (max-width: $width) {
+    @content;
+  }
+}
 
 .row {
   display: flex;
@@ -46,31 +51,64 @@ $text-align: left, center, right, justify;
   @for $i from 1 through $max-columns {
     .col-#{$i} {
       width: 100% / ($max-columns / $i);
-      padding: 0 $col-padding;
+      padding-left: $col-padding;
+      padding-right: $col-padding;
+
+      @include media(823px) {
+        &-#{sm} {
+          width: 100% / ($max-columns / $i);
+        }
+      }
+
+      @include media(411px) {
+        &-#{smx} {
+          width: 100% / ($max-columns / $i);
+        }
+      }
+
+      @include media(320px) {
+        &-#{smxx} {
+          width: 100% / ($max-columns / $i);
+        }
+      }
     }
   }
 }
 
 @for $i from 1 through $max-margin-number {
   .mt-#{$i} {
-    margin-top: 2px + (4px * ($i - 1));
+    margin-top: 2px + (4px * ($i - 1)) !important;
   }
 
   .mb-#{$i} {
-    margin-bottom: 2px + (4px * ($i - 1));
+    margin-bottom: 2px + (4px * ($i - 1)) !important;
   }
 
   .my-#{$i} {
     margin-top: 2px + (4px * ($i - 1));
-    margin-bottom: 2px + (4px * ($i - 1));
+    margin-bottom: 2px + (4px * ($i - 1)) !important;
   }
 
   .mr-#{$i} {
-    margin-right: 2px + (4px * ($i - 1));
+    margin-right: 2px + (4px * ($i - 1)) !important;
+  }
+
+  .ml-#{$i} {
+    margin-left: 2px + (4px * ($i - 1)) !important;
+  }
+
+  .mx-#{$i} {
+    margin-right: 2px + (4px * ($i - 1)) !important;
+    margin-left: 2px + (4px * ($i - 1)) !important;
+  }
+
+  .px-#{$i} {
+    padding-right: 2px + (4px * ($i - 1)) !important;
+    padding-left: 2px + (4px * ($i - 1)) !important;
   }
 }
 
-.disabled * {
+.disabled, .disabled * {
   cursor: default;
   opacity: 0.8;
   pointer-events: none;

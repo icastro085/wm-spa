@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 
 import VehiclesItem from './VehiclesItem';
 import useFilteredVehicles from './hooks/useFilteredVehicles';
+import useQuery from './hooks/useQuery';
 
 export default function VehiclesList() {
   const {
@@ -11,10 +12,11 @@ export default function VehiclesList() {
     isLoadingVehicles,
   } = useFilteredVehicles();
   const isEnableSearch = useRef(false);
+  const { query: { ShowResults }, addQuery } = useQuery();
 
   useEffect(() => {
     const onScroll = async () => {
-      if (isEnableSearch.current) {
+      if (isEnableSearch.current || !ShowResults) {
         return;
       }
 
@@ -47,6 +49,11 @@ export default function VehiclesList() {
     };
   }, [vehicles]);// update scroll page after reload vehicles
 
+  useEffect(() => {
+    // prevent on first entry show result without press on search button
+    addQuery({ ShowResults: null });
+  }, []);
+
   return (
     <div className="row mt-5 container-items">
       {
@@ -55,7 +62,7 @@ export default function VehiclesList() {
             vehiclesFiltered.map((vehicle) => <VehiclesItem key={`vehicle-${vehicle.ID}`} vehicle={vehicle} />)
           )
           : !isLoadingVehicles && (
-            <div className="col-12 mt-5">
+            <div className="col-12 mt-5 px-5">
               <p className="text-center empty-result">
                 Sem resultados, utilize os filtros acima para buscar por ofertars
               </p>

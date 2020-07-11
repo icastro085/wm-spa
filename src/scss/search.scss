@@ -135,5 +135,11 @@
   .empty-result {
     font-size: 22px;
     font-weight: 500;
+
+    @include media(411px) {
+      & {
+        font-size: 16px;
+      }
+    }
   }
 }

@@ -21,7 +21,7 @@ export default function SearchType() {
 
   return (
     <>
-      <div className="col-2">
+      <div className="col-2 col-4-sm col-6-smx col-6-smxx">
         <Checkbox
           label="Novo"
           value="new"
@@ -29,7 +29,7 @@ export default function SearchType() {
           onChange={onChange}
         />
       </div>
-      <div className="col-2">
+      <div className="col-2 col-4-sm col-6-smx col-6-smxx">
         <Checkbox
           label="Usado"
           value="used"

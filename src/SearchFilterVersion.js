@@ -34,7 +34,7 @@ export default function SearchFilterVersion() {
   }, [ModelIDQuery]);
 
   return (
-    <div className={classNames('col-6', { disabled: isDisabled })}>
+    <div className={classNames('col-6 col-12-sm col-12-smx col-12-smxx', { disabled: isDisabled })}>
       <div className="field">
         <label>Versão:</label>
         <select onChange={onChangeVersion} value={VersionIDQuery}>

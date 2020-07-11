@@ -16,7 +16,7 @@ export default function SearchFilterMake() {
   };
 
   return (
-    <div className="col-3">
+    <div className="col-3 col-6-sm col-12-smx col-12-smxx">
       <div className="field">
         <label>Marca:</label>
         <select onChange={onChangeMake} value={MakeIDQuery}>

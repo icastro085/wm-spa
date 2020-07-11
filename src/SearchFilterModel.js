@@ -34,7 +34,7 @@ export default function SearchFilterModel() {
   }, [MakeIDQuery]);
 
   return (
-    <div className={classNames('col-3', { disabled: isDisabled })}>
+    <div className={classNames('col-3 col-6-sm col-12-smx col-12-smxx', { disabled: isDisabled })}>
       <div className="field">
         <label>Modelo:</label>
         <select onChange={onChangeModel} value={ModelIDQuery}>

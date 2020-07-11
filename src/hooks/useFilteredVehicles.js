@@ -95,6 +95,7 @@ export default function useFilteredVehicles() {
     setIsloadingVehicles,
     vehiclesFiltered,
     vehicles,
+    setVehicles,
     gePage,
   };
 }
