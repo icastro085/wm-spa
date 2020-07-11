@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 import useFilteredVehicles from './hooks/useFilteredVehicles';
 import useQuery from './hooks/useQuery';
 import { Select } from './Form';
@@ -32,7 +33,7 @@ export default function SearchFilterPrice() {
 
   return (
     <div className="col-3 col-6-sm col-12-smx col-12-smxx">
-      <div className="field">
+      <div className={classNames('field', { disabled: !vehicles.length })}>
         <Select
           onChange={onChange}
           value={Prices}
