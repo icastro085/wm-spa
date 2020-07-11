@@ -42,13 +42,25 @@
     padding: 30px 50px;
     min-height: 312px;
 
-    .where i {
-      color: $primary-color;
-      margin-right: 3px;
-    }
+    .where {
+      & + input {
+        margin-right: -20px !important;
+        padding-right: 25px !important;
 
-    .input-radius {
-      width: 260px;
+        & + i {
+          opacity: .5;
+          cursor: pointer;
+
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+
+      i {
+        color: $primary-color;
+        margin-right: 3px;
+      }
     }
 
     .advanced-search-button {

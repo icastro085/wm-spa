@@ -1,7 +1,7 @@
 import React from 'react';
 import { Select } from './Form';
 import useQuery from './hooks/useQuery';
-import useLocation from './hooks/useLocation';
+import SearchLocationInput from './SearchLocationInput';
 
 const itemsRadius = [
   {
@@ -23,10 +23,8 @@ const itemsRadius = [
 ];
 
 export default function SearchLocation() {
-  const { location } = useLocation();
   const { query, addQuery } = useQuery();
   const { Radius = '100' } = query;
-  const currentLocation = location.state ? `${location.city} - ${location.state}` : '';
 
   const onChange = (RadiusUpdated) => {
     addQuery({ Radius: RadiusUpdated });
@@ -35,15 +33,7 @@ export default function SearchLocation() {
   return (
     <div className="col-6 col-12-sm col-12-smx col-12-smxx group-lx">
       <div className="field col-8 col-12-sm col-12-smx">
-        <label className="where">
-          <i className="fas fa-map-marker-alt" />
-          Onde:
-        </label>
-        <input
-          type="text"
-          onChange={() => {}}
-          value={currentLocation}
-        />
+        <SearchLocationInput />
       </div>
 
       <div className="field col-4 col-12-sm col-12-smx">

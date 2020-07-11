@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const path = require('path');
 
@@ -20,6 +21,7 @@ const config = {
       filename: '[name].css',
       chunkFilename: '[id].css',
     }),
+    new FaviconsWebpackPlugin('./src/img/favicon.ico'),
   ],
   module: {
     rules: [

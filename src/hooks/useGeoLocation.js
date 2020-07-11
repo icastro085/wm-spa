@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { getLocation } from '../facades/geoip';
 
-export default function useLocation() {
+export default function useGeoLocation() {
   const [location, setLocation] = useState({
     state: '',
     city: '',
