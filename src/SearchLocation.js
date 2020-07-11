@@ -1,6 +1,34 @@
 import React from 'react';
+import { Select } from './Form';
+import useQuery from './hooks/useQuery';
+
+const itemsRadius = [
+  {
+    ID: '100',
+    Name: '100km',
+  },
+  {
+    ID: '500',
+    Name: '500km',
+  },
+  {
+    ID: '1000',
+    Name: '1000km',
+  },
+  {
+    ID: '2000',
+    Name: '2000km',
+  },
+];
 
 export default function SearchLocation() {
+  const { query, addQuery } = useQuery();
+  const { Radius = '100' } = query;
+
+  const onChange = (RadiusUpdated) => {
+    addQuery({ Radius: RadiusUpdated });
+  };
+
   return (
     <div className="col-6 col-12-sm col-12-smx col-12-smxx group-lx">
       <div className="field col-7 col-12-sm col-12-smx">
@@ -12,10 +40,13 @@ export default function SearchLocation() {
       </div>
 
       <div className="field col-5 col-12-sm col-12-smx">
-        <label>Raio:</label>
-        <select className="text-right">
-          <option>100km</option>
-        </select>
+        <Select
+          value={Radius}
+          onChange={onChange}
+          items={itemsRadius}
+        >
+          Raio:
+        </Select>
       </div>
     </div>
   );
