@@ -8,6 +8,7 @@ import SearchFilterModel from './SearchFilterModel';
 import SearchFilterVersion from './SearchFilterVersion';
 import SearchType from './SearchType';
 import SearchLocation from './SearchLocation';
+import SearchFilterYear from './SearchFilterYear';
 
 export default function Search() {
   return (
@@ -27,20 +28,13 @@ export default function Search() {
 
             <SearchFilterModel />
 
-            <div className="col-3 col-6-sm col-12-smx col-12-smxx">
-              <div className="field">
-                <label>Ano Desejado:</label>
-                <select className="text-right">
-                  <option>100km</option>
-                </select>
-              </div>
-            </div>
+            <SearchFilterYear />
 
             <div className="col-3 col-6-sm col-12-smx col-12-smxx">
               <div className="field">
                 <label>Faixa de preço:</label>
                 <select className="text-right">
-                  <option>100km</option>
+                  <option value="">&nbsp;</option>
                 </select>
               </div>
             </div>

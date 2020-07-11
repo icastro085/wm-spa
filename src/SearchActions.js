@@ -13,6 +13,7 @@ export default function SearchActions() {
       ModelID: null,
       VersionID: null,
       Type: null,
+      Years: null,
     });
   };
 
