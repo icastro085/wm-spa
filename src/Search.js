@@ -9,6 +9,7 @@ import SearchFilterVersion from './SearchFilterVersion';
 import SearchType from './SearchType';
 import SearchLocation from './SearchLocation';
 import SearchFilterYear from './SearchFilterYear';
+import SearchFilterPrice from './SearchFilterPrice';
 
 export default function Search() {
   return (
@@ -30,14 +31,7 @@ export default function Search() {
 
             <SearchFilterYear />
 
-            <div className="col-3 col-6-sm col-12-smx col-12-smxx">
-              <div className="field">
-                <label>Faixa de preço:</label>
-                <select className="text-right">
-                  <option value="">&nbsp;</option>
-                </select>
-              </div>
-            </div>
+            <SearchFilterPrice />
 
             <SearchFilterVersion />
           </div>

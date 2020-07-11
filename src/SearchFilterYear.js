@@ -32,8 +32,8 @@ export default function SearchFilterYear() {
   return (
     <div className="col-3 col-6-sm col-12-smx col-12-smxx">
       <div className="field">
-        <label>Ano Desejado:</label>
-        <select className="text-right" value={Years} onChange={onChange}>
+        <label htmlFor="years">Ano Desejado:</label>
+        <select id="years" className="text-right" value={Years} onChange={onChange}>
           <option value="">&nbsp;</option>
           {
             yearsFiltered

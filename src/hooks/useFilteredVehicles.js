@@ -23,6 +23,7 @@ export default function useFilteredVehicles() {
     VersionID,
     Type = ['new', 'used'],
     Years = '',
+    Prices = '',
   } = query;
 
   const findFilter = (data = [], idToFind) => (
@@ -41,6 +42,7 @@ export default function useFilteredVehicles() {
   if (vehicles.length) {
     const typeToCheck = Array.isArray(Type) ? Type : [Type];
     const yearsToCheck = Years.split('_');
+    const pricesToCheck = Prices.split('_');
 
     vehiclesFiltered = vehicles.filter(({
       Make,
@@ -49,6 +51,7 @@ export default function useFilteredVehicles() {
       KM,
       YearFab,
       YearModel,
+      Price,
     }) => {
       let isValid = true;
 
@@ -75,6 +78,13 @@ export default function useFilteredVehicles() {
         isValid = isValid && (
           parseInt(yearsToCheck[0]) === YearFab
           && parseInt(yearsToCheck[1]) === YearModel
+        );
+      }
+
+      if (pricesToCheck.length > 1) {
+        isValid = isValid && (
+          parseInt(pricesToCheck[0]) <= parseInt(Price)
+          && parseInt(pricesToCheck[1]) >= parseInt(Price)
         );
       }
 

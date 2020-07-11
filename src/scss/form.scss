@@ -44,14 +44,14 @@ input.checkbox {
     padding-left: 0;
     padding-right: 0;
 
-    > input, > select {
+    > label, > input, > select {
       border-radius: 0;
       border-radius: 0;
       border-right-width: 0;
     }
 
     &:first-child {
-      > input, > select {
+      > label, > input, > select {
         border-top-left-radius: $default-border-radius;
         border-bottom-left-radius: $default-border-radius;
       }
@@ -71,17 +71,26 @@ form {
   .row {
     .field {
       width: 100%;
+      display: flex;
+      align-items: center;
 
       > label {
-        position: absolute;
-        line-height: 65px;
         font-size: 12px;
         white-space: nowrap;
-        margin-left: 10px;
         user-select: none;
+        @include default-border;
+        line-height: 25px;
+        padding: 5px;
+        border-right: 0;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        z-index: 1;
+        background-color: #fff;
 
         & + input, & + select {
-          padding-left: 60px  !important;
+          border-left: 0 !important;
+          border-top-left-radius: 0 !important;
+          border-bottom-left-radius: 0 !important;
         }
       }
 
@@ -94,10 +103,6 @@ form {
         background-color: #fff;
         font-weight: bold;
         color: $component-text-color;
-      }
-
-      > select option {
-        padding: 20px;
       }
     }
 
