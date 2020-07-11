@@ -2,21 +2,26 @@ import React from 'react';
 import useFilteredVehicles from './hooks/useFilteredVehicles';
 import useQuery from './hooks/useQuery';
 
+const removeYearsDuplicated = (unique, item) => (
+  unique.find(({ YearFab, YearModel }) => (
+    YearFab === item.YearFab
+    && YearModel === item.YearModel
+  )) ? unique : [...unique, item]
+);
+
+const mapYears = ({ YearFab, YearModel }) => ({
+  YearFab,
+  YearModel,
+});
+
+const sortYears = (a, b) => a.YearFab - b.YearFab;
+
 export default function SearchFilterYear() {
   const { query, addQuery } = useQuery();
-  const { vehiclesFiltered } = useFilteredVehicles();
-  const years = vehiclesFiltered.map(({ YearFab, YearModel }) => ({
-    YearFab,
-    YearModel,
-  })).sort((a, b) => a.YearFab - b.YearFab);
+  const { vehicles } = useFilteredVehicles();
+  const years = vehicles.map(mapYears).sort(sortYears);
+  const yearsFiltered = years.reduce(removeYearsDuplicated, []);
   const { Years = '' } = query;
-
-  const yearsFiltered = years.reduce((unique, item) => (
-    unique.find(({ YearFab, YearModel }) => (
-      YearFab === item.YearFab
-      && YearModel === item.YearModel
-    )) ? unique : [...unique, item]
-  ), []);
 
   const onChange = (e) => {
     addQuery({
