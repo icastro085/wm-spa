@@ -3,6 +3,7 @@ import React from 'react';
 export default function Select({
   value = '',
   items = [],
+  placeholder = '',
   onChange = () => {},
   children,
 }) {
@@ -21,6 +22,7 @@ export default function Select({
         type="text"
         value={valueSelected}
         className="select"
+        placeholder={placeholder}
       />
       <ul>
         {

@@ -30,5 +30,14 @@
     },
     "message-empty": "Sem resultados, utilize os filtros acima para buscar por ofertars",
     "message-wait": "Aguarde..."
+  },
+  "create": {
+    "field": {
+      "color": "Cor:",
+      "km": "KM:",
+      "year-fab": "Anor Fabricação:",
+      "year-model": "Anor Modelo:",
+      "location": "Onde:"
+    }
   }
 }

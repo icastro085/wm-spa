@@ -1,15 +1,38 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { Select } from './Form';
 import useGeoLocation from './hooks/useGeoLocation';
+import useMake from './hooks/useMake';
+import useModel from './hooks/useModel';
+import useVersion from './hooks/useVersion';
 
-// const baseData = {
-
-// };
+const baseData = {
+  Color: '',
+  Image: '',
+  KM: '0km',
+  MakeID: '',
+  ModelID: '',
+  Price: '',
+  VersionID: '',
+  YearFab: '',
+  YearModel: '',
+  Location: '',
+};
 
 export default function Sales() {
   const { location: { state, city } } = useGeoLocation();
   const locationPlaceholder = state ? `${city} - ${state}` : null;
   const [image, setImage] = useState();
   const element = useRef();
+  const [data, setData] = useState({ ...baseData });
+
+  const { make, getMake } = useMake();
+  const { model, getModel, setModel } = useModel();
+  const { version, getVersion, setVersion } = useVersion();
+
+  const onChangeField = (field, value) => {
+    data[field] = value;
+    setData({ ...data });
+  };
 
   useEffect(() => {
     const el = element.current;
@@ -20,10 +43,29 @@ export default function Sales() {
       const reader = new FileReader();
       reader.addEventListener('load', (er) => {
         setImage(er.target.result);
+        onChangeField('Image', er.target.result);
       });
       reader.readAsDataURL(file);
     });
+
+    getMake();
   }, []);
+
+  useEffect(() => {
+    if (data.MakeID) {
+      getModel({ MakeID: data.MakeID });
+    } else {
+      setModel([]);
+    }
+  }, [data.MakeID]);
+
+  useEffect(() => {
+    if (data.ModelID) {
+      getVersion({ ModelID: data.ModelID });
+    } else {
+      setVersion([]);
+    }
+  }, [data.ModelID]);
 
   return (
     <section className="search-container">
@@ -45,57 +87,98 @@ export default function Sales() {
           <div className="row">
             <div className="col-3 col-6-sm col-12-smx">
               <div className="field">
-                <label>Marca:</label>
-                <input type="text" placeholder="Ex: Honda" />
+                <Select
+                  onChange={(ID) => onChangeField('MakeID', ID)}
+                  value={data.MakeID}
+                  items={make}
+                  placeholder="Ex: Honda"
+                >
+                  {__('search.filters.make')}
+                </Select>
               </div>
             </div>
 
             <div className="col-3 col-6-sm col-12-smx">
               <div className="field">
-                <label>Modelo:</label>
-                <input type="text" placeholder="Ex: City" />
+                <Select
+                  onChange={(ID) => onChangeField('ModelID', ID)}
+                  value={data.ModelID}
+                  items={model}
+                  placeholder="Ex: City"
+                >
+                  {__('search.filters.model')}
+                </Select>
               </div>
             </div>
 
             <div className="col-6 col-12-sm col-12-smx">
               <div className="field">
-                <label>Versão:</label>
-                <input type="text" placeholder="Ex: 1.5 DX 16V FLEX 4P AUTOMÁTICO" />
+                <Select
+                  onChange={(ID) => onChangeField('VersionID', ID)}
+                  value={data.VersionID}
+                  items={version}
+                  placeholder="Ex: 1.0 MPI EL 8V FLEX 4P MANUAL"
+                >
+                  {__('search.filters.version')}
+                </Select>
               </div>
             </div>
 
             <div className="col-3 col-6-sm col-12-smx">
               <div className="field">
-                <label>Cor:</label>
+                <label>{__('create.field.color')}</label>
                 <input type="text" placeholder="Ex: Azul" />
               </div>
             </div>
 
             <div className="col-3 col-6-sm col-12-smx">
               <div className="field">
-                <label>KM:</label>
-                <input type="text" placeholder="Ex: 100km" />
+                <label>{__('create.field.km')}</label>
+                <input
+                  type="text"
+                  className="text-right"
+                  placeholder="Ex: 100km"
+                  onChange={(e) => onChangeField('KM', e.target.value)}
+                  value={data.KM}
+                />
               </div>
             </div>
 
             <div className="col-3 col-6-sm col-12-smx">
               <div className="field">
-                <label>Anor Fabricação:</label>
-                <input type="number" className="text-right" placeholder="Ex: 1999" />
+                <label>{__('create.field.year-fab')}</label>
+                <input
+                  type="number"
+                  className="text-right"
+                  placeholder="Ex: 1999"
+                  onChange={(e) => onChangeField('YearFab', e.target.value)}
+                  value={data.YearFab}
+                />
               </div>
             </div>
 
             <div className="col-3 col-6-sm col-12-smx">
               <div className="field">
-                <label>Anor Modelo:</label>
-                <input type="number" className="text-right" placeholder="Ex: 1999" />
+                <label>{__('create.field.year-model')}</label>
+                <input
+                  type="number"
+                  className="text-right"
+                  placeholder="Ex: 1999"
+                  onChange={(e) => onChangeField('YearModel', e.target.value)}
+                  value={data.YearModel}
+                />
               </div>
             </div>
 
             <div className="col-12 col-12-sm col-12-smx">
               <div className="field">
-                <label>Onde:</label>
-                <input type="text" placeholder={`Ex: ${locationPlaceholder}`} />
+                <label>{__('create.field.location')}</label>
+                <input
+                  type="text"
+                  placeholder={`Ex: ${locationPlaceholder}`}
+                  onChange={(e) => onChangeField('Location', e.target.value)}
+                  value={data.Location}
+                />
               </div>
             </div>
           </div>
