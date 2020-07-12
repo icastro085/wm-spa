@@ -20,6 +20,7 @@
     "document": true,
     "window": true,
     "__": true,
-    "FileReader": true
+    "FileReader": true,
+    "localStorage": true
   }
 }

@@ -32,6 +32,8 @@
     "message-wait": "Aguarde..."
   },
   "create": {
+    "title": "Cadastro do Carro",
+    "addButton": "Cadastrar",
     "field": {
       "color": "Cor:",
       "km": "KM:",

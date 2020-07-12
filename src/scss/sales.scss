@@ -7,7 +7,7 @@
 
     .image-container {
       @include default-border;
-      min-height: 300px;
+      height: 300px;
       overflow: hidden;
       position: relative;
       display: flex;
@@ -21,6 +21,7 @@
 
       img {
         max-width: 100%;
+        position: absolute;
       }
 
       input[type="file"] {
