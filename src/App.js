@@ -9,6 +9,7 @@ import {
 import Header from './Header';
 import Search from './Search';
 import Sales from './Sales';
+import Alert from './Alert';
 
 export default function App() {
   return (
@@ -28,6 +29,7 @@ export default function App() {
           </Switch>
         </Router>
       </section>
+      <Alert />
     </>
   );
 }

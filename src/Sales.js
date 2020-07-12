@@ -4,6 +4,7 @@ import useGeoLocation from './hooks/useGeoLocation';
 import useMake from './hooks/useMake';
 import useModel from './hooks/useModel';
 import useVersion from './hooks/useVersion';
+import useAlert from './hooks/useAlert';
 
 const baseData = {
   Color: '',
@@ -28,6 +29,7 @@ export default function Sales() {
   const { make, getMake } = useMake();
   const { model, getModel, setModel } = useModel();
   const { version, getVersion, setVersion } = useVersion();
+  const { setAlert } = useAlert();
 
   const onChangeField = (field, value) => {
     data[field] = value;
@@ -70,6 +72,8 @@ export default function Sales() {
     const cars = JSON.parse(localStorage.getItem('webmotors.cars') || '[]');
     cars.push(data);
     localStorage.setItem('webmotors.cars', JSON.stringify(cars));
+
+    setAlert({ message: 'Cadastro realizado com sucesso!' });
   };
 
   return (
