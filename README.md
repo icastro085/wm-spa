@@ -4,21 +4,22 @@
 
 ### Dependências
 - NodeJs 14: https://nodejs.org/en/
+- Yarn: https://yarnpkg.com/getting-started/install
 
 ### Instalar as dependências
 ```bash
-$ npm i
+$ yarn
 ```
 
 ### Executar o Projeto
 - Modo de desenvolvimento:
 ```bash
-$ npm run start
+$ yarn start
 ```
 
 - Acessar a url: http://localhost:5000
 
 ### Gerar o bundler para produção
 ```bash
-$ npm run build
+$ yarn build
 ```

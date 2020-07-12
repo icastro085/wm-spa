@@ -5,8 +5,6 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const path = require('path');
 
 const config = {
-  devtool: 'cheap-module-source-map',
-  mode: 'development',
   entry: ['@babel/polyfill','./src/index.js'],
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -45,16 +43,6 @@ const config = {
         use: ['file-loader'],
       },
     ],
-  },
-  devServer: {
-    hot: true,
-    stats: {
-      colors: true,
-    },
-
-    contentBase: './dist',
-    host: '0.0.0.0',
-    port: 5000,
   },
 };
 
